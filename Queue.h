@@ -19,17 +19,21 @@ public:
     void popFront();
     int size();
 
+    //iterator
+    class Iterator;
+    Iterator begin() const;
+    Iterator end() const;
+
 
     //external functions
     template<class S>
     friend Queue<S> filter(Queue<S> q, bool (*filterFunction)(S));
     template<class S>
-    void transform(Queue<S>, void (*transformFunction)(S));
+    friend void transform(Queue<S> q, void (*transformFunction)(S&));
 
     //exceptions
-    class InvalidSize{};
+    class EmptyQueue{};
     class OutOfMemory{};
-    class Empty{};
 
     //my functions
     void reSize(int size, int newSize);
@@ -39,6 +43,26 @@ private:
     int m_tail;
     int m_size;
     int m_maxSize;
+};
+
+template <class T>
+class Queue<T>::Iterator
+{
+    const Queue<T>* m_queue;
+    int m_index;
+    Iterator(const Queue* queue, int index);
+    friend class Queue;
+public:
+    const T& operator*() const;
+    Iterator & operator++();
+    const Iterator operator++(T);
+    bool operator==(const Iterator& it) const;
+    bool operator!=(const Iterator& it) const;
+    Iterator(const Iterator&) = default;
+    Iterator& operator=(const Iterator&) = default;
+    //exceptions
+    class InvalidOperation{};
+
 };
 
 #endif //EX3_QUEUE_H
