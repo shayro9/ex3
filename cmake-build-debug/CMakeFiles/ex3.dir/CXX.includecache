@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/shayr/Documents/GitHub/ex3/Queue.h
+
+C:/Users/shayr/Documents/GitHub/ex3/QueueExampleTests.cpp
+Queue.h
+C:/Users/shayr/Documents/GitHub/ex3/Queue.h
+iostream
+C:/Users/shayr/Documents/GitHub/ex3/iostream
+
