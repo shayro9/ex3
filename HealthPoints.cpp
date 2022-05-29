@@ -24,11 +24,11 @@ HealthPoints& HealthPoints::operator-(const int num){
 }
 
 HealthPoints& HealthPoints::operator+= (const int num){
-    this= this + num;
+    *this= *this + num;
 }
 
 HealthPoints& HealthPoints::operator-= (const int num){
-    this = this - num;
+    *this = *this - num;
 }
 
 bool HealthPoints::operator== (const HealthPoints& other){
@@ -39,14 +39,14 @@ bool HealthPoints::operator== (const HealthPoints& other){
 }
 
 bool HealthPoints::operator!= (const HealthPoints& other){
-    if (this==other){
+    if (*this==other){
         return false;
     }
     return true;
 }
 
 bool HealthPoints::operator>= (const HealthPoints& other){
-    if( this > other || this == other){
+    if( *this > other || *this == other){
         return true;
     }
     return false;
@@ -60,20 +60,20 @@ bool HealthPoints::operator> (const HealthPoints& other){
 }
 
 bool HealthPoints::operator<= (const HealthPoints& other){
-    if( this > other){
+    if( *this > other){
         return false;
     }
     return true;
 }
 
 bool HealthPoints::operator< (const HealthPoints& other){
-    if(this>=other){
+    if(*this>=other){
         return false;
     }
     return true;
 }
 
-void HealthPoints::operator<<(){
+// void HealthPoints::operator<<(){}
 
-}
+
 

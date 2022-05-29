@@ -11,24 +11,23 @@ public:
     ~HealthPoints()= default;
     HealthPoints(const HealthPoints& other)= default;
     HealthPoints& operator= (const HealthPoints& other)= default;
-
+    HealthPoints& operator+ (const int num);
+    HealthPoints& operator- (const int num);
+    HealthPoints& operator+= (const int num);
+    HealthPoints& operator-= (const int num);
+    bool operator== (const HealthPoints& other);
+    bool operator!= (const HealthPoints& other);
+    bool operator>= (const HealthPoints& other);
+    bool operator> (const HealthPoints& other);
+    bool operator<= (const HealthPoints& other);
+    bool operator< (const HealthPoints& other);
+    void operator<< ();
 
 private:
     int m_healthPoints;
     int m_max;
 };
 
-friend HealthPoints& operator+ (const int num);
-friend HealthPoints& operator- (const int num);
-HealthPoints& operator+= (const int num);
-HealthPoints& operator-= (const int num);
-friend bool operator== (const HealthPoints& other);
-bool operator!= (const HealthPoints& other);
-bool operator>= (const HealthPoints& other);
-friend bool operator> (const HealthPoints& other);
-bool operator<= (const HealthPoints& other);
-bool operator< (const HealthPoints& other);
-void operator<< ();
 
 #endif //EX3_HEALTHPOINTS_H
 
