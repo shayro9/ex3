@@ -51,6 +51,12 @@ bool testArithmaticOperators()
 	healthPoints2 = healthPoints2 - 160; /* now has 0 points out of 150 */
 	testResult = testResult && checkHealthPointsValues(healthPoints2, 0, 150);
 
+    healthPoints1 = 80085;
+    healthPoints1 -= 80085;
+    healthPoints2 = 80085;
+    healthPoints2 -= 80000;
+
+    healthPoints1 = healthPoints2 + (-2);
 	healthPoints2 = 160 + healthPoints1; /* now has 100 out of 100 */
 	testResult = testResult && checkHealthPointsValues(healthPoints2, 100, 100);
 

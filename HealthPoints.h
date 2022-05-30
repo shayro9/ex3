@@ -19,8 +19,8 @@ public:
     HealthPoints& operator= (const HealthPoints& other)= default;
     HealthPoints& operator= (int num);
 
-    HealthPoints operator+= (int num);
-    HealthPoints operator-= (int num);
+    HealthPoints& operator+= (int num);
+    HealthPoints& operator-= (int num);
     HealthPoints operator- (int num);
 
     friend bool operator== (const HealthPoints&, const HealthPoints&);

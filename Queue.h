@@ -19,7 +19,7 @@ public:
     T& front();
     const T& front() const;
     void popFront();
-    int size();
+    int size() const;
 
     //iterators
     class Iterator;
@@ -32,8 +32,8 @@ public:
     //external functions
     template<class S, class H>
     friend Queue<S> filter(Queue<S> q, H filterFunction);
-    template<class S>
-    friend void transform(Queue<S> &q, void (*transformFunction)(S&));
+    template<class S, class H>
+    friend void transform(Queue<S> &q, H transformFunction);
 
     //exceptions
     class EmptyQueue{};
@@ -63,7 +63,7 @@ public:
 
     T& operator*() const;
     Iterator& operator++();
-    Iterator operator++(T);
+    Iterator operator++(int);
 
     bool operator==(const Iterator& it);
     bool operator!=(const Iterator& it);
@@ -105,7 +105,7 @@ Queue<T>::Queue() :
         m_tail(-1),
         m_size(0),
         m_maxSize(SIZE)
-{};
+{}
 
 template<class T>
 Queue<T>::Queue(const Queue<T> &q):
@@ -132,7 +132,7 @@ Queue<T>::~Queue() {
 }
 
 template<class T>
-Queue<T> &Queue<T>::operator=(const Queue<T>& q) {
+Queue<T>& Queue<T>::operator=(const Queue<T>& q) {
     if(this == &q)
         return *this;
 
@@ -142,7 +142,7 @@ Queue<T> &Queue<T>::operator=(const Queue<T>& q) {
         m_size = q.m_size;
         m_tail = q.m_tail;
         for (int i = 0; i < m_size; ++i) {
-            tempData[i] = q.m_data;
+            tempData[i] = q.m_data[i];
         }
     }
     catch (...)
@@ -157,9 +157,8 @@ Queue<T> &Queue<T>::operator=(const Queue<T>& q) {
 
 template<class T>
 void Queue<T>::reSize(int size,int newSize) {
-    T* temp;
+    T* temp = new T[newSize];
     try {
-        temp = new T[newSize];
         for (int i = 0; i < size; ++i) {
             temp[i] = m_data[i];
         }
@@ -220,7 +219,7 @@ void Queue<T>::popFront() {
 }
 
 template<class T>
-int Queue<T>::size() {
+int Queue<T>::size() const{
     return m_size;
 }
 
@@ -247,7 +246,7 @@ typename Queue<T>::Iterator & Queue<T>::Iterator::operator++() {
 }
 
 template<class T>
-typename Queue<T>::Iterator Queue<T>::Iterator::operator++(T) {
+typename Queue<T>::Iterator Queue<T>::Iterator::operator++(int) {
     if(*this == this->m_queue->end())
         throw InvalidOperation();
     Iterator result = *this;
@@ -312,7 +311,7 @@ template<class T>
 const typename Queue<T>::ConstIterator Queue<T>::ConstIterator::operator++(T) {
     if(*this == this->m_queue->end())
         throw InvalidOperation();
-    Iterator result = *this;
+    ConstIterator result = *this;
     ++*this;
     return result;
 }
@@ -368,8 +367,8 @@ Queue<S> filter(Queue<S> q, H filterFunction) {
     return tempQueue;
 }
 
-template<class S>
-void transform(Queue<S> &q, void (*transformFunction)(S&)) {
+template<class S, class H>
+void transform(Queue<S> &q, H transformFunction) {
     for (auto iterator = q.begin(); iterator != q.end(); ++iterator) {
         transformFunction(*iterator);
     }

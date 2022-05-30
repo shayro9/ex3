@@ -4,26 +4,24 @@
 
 #include "HealthPoints.h"
 
-HealthPoints::HealthPoints(const int max) :
-    m_max(max),
-    m_healthPoints(max)
+HealthPoints::HealthPoints(const int max)
 {
     if (max <= 0){
         throw InvalidArgument();
     }
+    m_max = max;
+    m_healthPoints = max;
 }
 
 HealthPoints &HealthPoints::operator=(int num) {
     if(num < 0)
         throw InvalidArgument();
-    if(num > m_max)
-        m_healthPoints = m_max;
-    else
-        m_healthPoints = num;
+    m_max = num;
+    m_healthPoints = num;
     return *this;
 }
 
-HealthPoints HealthPoints::operator+= (const int num){
+HealthPoints& HealthPoints::operator+= (const int num){
     int sum = m_healthPoints + num;
 
     if(sum < 0)
@@ -35,7 +33,7 @@ HealthPoints HealthPoints::operator+= (const int num){
     return *this;
 }
 
-HealthPoints HealthPoints::operator-= (const int num){
+HealthPoints& HealthPoints::operator-= (const int num){
     int sum = m_healthPoints - num;
 
     if(sum < 0)
@@ -48,8 +46,7 @@ HealthPoints HealthPoints::operator-= (const int num){
 }
 
 HealthPoints HealthPoints::operator-(const int num){
-    *this -= num;
-    return *this;
+    return HealthPoints(*this) -= num;
 }
 
 HealthPoints operator+ (const HealthPoints h, const int num)
