@@ -14,6 +14,18 @@ static void setFortyTwo(int& n)
 	n = 42;
 }
 
+class Functor
+{
+    int divider;
+public:
+    Functor(int n) : divider(n){};
+
+    bool operator()(int num) const
+    {
+        return num % divider == 0;
+    }
+};
+
 namespace QueueTests {
 
 bool testQueueMethods()
@@ -48,7 +60,8 @@ bool testModuleFunctions()
 	for (int i = 1; i <= 10; i++) {
 		queue3.pushBack(i);
 	}
-	Queue<int> queue4 = filter(queue3, isEven);
+    Functor f(3);
+	Queue<int> queue4 = filter(queue3, f);
 	for (int i = 2; i <= 10; i+=2) {
 		int front4 = queue4.front();
 		AGREGATE_TEST_RESULT(testResult, front4 == i);
@@ -103,7 +116,7 @@ bool testConstQueue()
 	for (int i = 1; i <= 5; i++) {
 		queue5.pushBack(42);
 	}
-	const Queue<int> constQueue = queue5;
+	Queue<int> constQueue = queue5;
 	for (Queue<int>::ConstIterator i = constQueue.begin(); i != constQueue.end(); ++i) {
 		AGREGATE_TEST_RESULT(testResult, (*i == 42));
 	}

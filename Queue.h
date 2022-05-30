@@ -87,6 +87,7 @@ public:
     //exceptions
     class InvalidOperation{};
 
+    ConstIterator(const Iterator& i);
 };
 
 //--------------Implementation-------------------
@@ -215,7 +216,7 @@ int Queue<T>::size() {
     return m_size;
 }
 
-//Iterator implementation
+//----------------Iterator implementation-----------------------
 template<class T>
 Queue<T>::Iterator::Iterator(Queue<T>* queue, int index) :
         m_queue(queue),
@@ -279,6 +280,12 @@ Queue<T>::ConstIterator::ConstIterator(const Queue<T>* queue, int index) :
 {}
 
 template<class T>
+Queue<T>::ConstIterator::ConstIterator(const Iterator &i) :
+    m_queue(i.m_queue),
+    m_index(i.m_index)
+{}
+
+template<class T>
 const T& Queue<T>::ConstIterator::operator*() const {
     if(m_index >= m_queue->m_size || m_index < 0)
         throw InvalidOperation();
@@ -336,8 +343,8 @@ typename Queue<T>::ConstIterator Queue<T>::end() const{
     return ConstIterator(this,m_size);
 }
 
-template<class S>
-Queue<S> filter(Queue<S> q, bool (*filterFunction)(S)) {
+template<class S, class H>
+Queue<S> filter(Queue<S> q, H filterFunction) {
     Queue<S> tempQueue;
     for (auto iterator = q.begin(); iterator != q.end(); ++iterator) {
         if(filterFunction(*iterator))
