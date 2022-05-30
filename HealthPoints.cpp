@@ -10,13 +10,6 @@ HealthPoints::HealthPoints(const int max) :
 {
     if (max <= 0){
         throw InvalidArgument();
-}
-
-HealthPoints& HealthPoints:: operator+(const int num){
-    m_healthPoints += num;
-    if (m_healthPoints > m_max){
-        m_healthPoints= m_max;
->>>>>>> e95d4cddb786a326099808497a062472d8b9951c
     }
 }
 

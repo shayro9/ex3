@@ -5,7 +5,6 @@
 #ifndef EX3_HEALTHPOINTS_H
 #define EX3_HEALTHPOINTS_H
 
-<<<<<<< HEAD
 #include "ostream"
 typedef std::ostream ostream;
 
@@ -18,7 +17,6 @@ public:
     HealthPoints(const HealthPoints& other)= default;
 
     HealthPoints& operator= (const HealthPoints& other)= default;
-<<<<<<< HEAD
     HealthPoints& operator= (int num);
 
     HealthPoints operator+= (int num);
@@ -31,17 +29,6 @@ public:
 
     //Exceptions
     class InvalidArgument{};
-
-    HealthPoints& operator+ (const int num);
-    HealthPoints& operator- (const int num);
-    HealthPoints& operator+= (const int num);
-    HealthPoints& operator-= (const int num);
-    bool operator== (const HealthPoints& other);
-    bool operator!= (const HealthPoints& other);
-    bool operator>= (const HealthPoints& other);
-    bool operator> (const HealthPoints& other);
-    bool operator<= (const HealthPoints& other);
-    bool operator< (const HealthPoints& other);
 
 private:
     int m_healthPoints;
