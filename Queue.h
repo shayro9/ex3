@@ -30,7 +30,7 @@ public:
     ConstIterator end() const;
 
     //external functions
-    template<class S>
+    template<class S, class H>
     friend Queue<S> filter(Queue<S> q, bool (*filterFunction)(S));
     template<class S>
     friend void transform(Queue<S> &q, void (*transformFunction)(S&));

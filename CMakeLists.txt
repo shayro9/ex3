@@ -9,4 +9,4 @@ add_executable(ex3
         Queue.h
         QueueExampleTests.cpp
         TestMain.cpp
-        TestUtils.h HealthPoints.cpp HealthPoints.h)
+        TestUtils.h)

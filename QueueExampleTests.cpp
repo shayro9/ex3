@@ -61,7 +61,7 @@ bool testModuleFunctions()
 		queue3.pushBack(i);
 	}
     Functor f(3);
-	Queue<int> queue4 = filter(queue3, f);
+	Queue<int> queue4 = filter(queue3, isEven);
 	for (int i = 2; i <= 10; i+=2) {
 		int front4 = queue4.front();
 		AGREGATE_TEST_RESULT(testResult, front4 == i);
