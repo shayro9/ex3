@@ -31,7 +31,7 @@ public:
 
     //external functions
     template<class S, class H>
-    friend Queue<S> filter(Queue<S> q, bool (*filterFunction)(S));
+    friend Queue<S> filter(Queue<S> q, H filterFunction);
     template<class S>
     friend void transform(Queue<S> &q, void (*transformFunction)(S&));
 

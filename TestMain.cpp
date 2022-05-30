@@ -1,5 +1,6 @@
 
 #include <functional>
+#include <string>
 
 #include "TestUtils.h"
 
@@ -18,10 +19,10 @@ namespace QueueTests {
 }
 
 std::function<bool()> testsList[] = {
-	/*HealthPointsTests::testInitialization,
+	HealthPointsTests::testInitialization,
 	HealthPointsTests::testArithmaticOperators,
 	HealthPointsTests::testComparisonOperators,
-	HealthPointsTests::testOutputOperator,*/
+	HealthPointsTests::testOutputOperator,
 
 	QueueTests::testQueueMethods,
 	QueueTests::testModuleFunctions,

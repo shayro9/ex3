@@ -4,13 +4,34 @@
 
 #ifndef EX3_HEALTHPOINTS_H
 #define EX3_HEALTHPOINTS_H
-//Player& operator= (const Player& other) = default;
+
+<<<<<<< HEAD
+#include "ostream"
+typedef std::ostream ostream;
+
 class HealthPoints{
+
 public:
-    HealthPoints(const int max=100);
+
+    HealthPoints(int max=100);
     ~HealthPoints()= default;
     HealthPoints(const HealthPoints& other)= default;
+
     HealthPoints& operator= (const HealthPoints& other)= default;
+<<<<<<< HEAD
+    HealthPoints& operator= (int num);
+
+    HealthPoints operator+= (int num);
+    HealthPoints operator-= (int num);
+    HealthPoints operator- (int num);
+
+    friend bool operator== (const HealthPoints&, const HealthPoints&);
+    friend bool operator< (const HealthPoints&, const HealthPoints&);
+    friend ostream& operator<<(ostream& os, const HealthPoints& health);
+
+    //Exceptions
+    class InvalidArgument{};
+
     HealthPoints& operator+ (const int num);
     HealthPoints& operator- (const int num);
     HealthPoints& operator+= (const int num);
@@ -21,16 +42,22 @@ public:
     bool operator> (const HealthPoints& other);
     bool operator<= (const HealthPoints& other);
     bool operator< (const HealthPoints& other);
-    //void operator<< ();
 
 private:
     int m_healthPoints;
     int m_max;
 };
 
-enum class exceptions{InvalidArgument};
+
+HealthPoints operator+ (HealthPoints h, int num);
+HealthPoints operator+ (int num, HealthPoints h);
+bool operator!= (const HealthPoints&, const HealthPoints&);
+bool operator>= (const HealthPoints&, const HealthPoints&);
+bool operator> (const HealthPoints&, const HealthPoints&);
+bool operator<= (const HealthPoints&, const HealthPoints&);
+
+class InvalidArgument{};
+
 
 
 #endif //EX3_HEALTHPOINTS_H
-
-
