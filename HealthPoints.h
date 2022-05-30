@@ -4,8 +4,9 @@
 
 #ifndef EX3_HEALTHPOINTS_H
 #define EX3_HEALTHPOINTS_H
-//Player& operator= (const Player& other) = default;
+
 class HealthPoints{
+
 public:
     HealthPoints(const int max=100);
     ~HealthPoints()= default;
@@ -21,14 +22,13 @@ public:
     bool operator> (const HealthPoints& other);
     bool operator<= (const HealthPoints& other);
     bool operator< (const HealthPoints& other);
-    //void operator<< ();
 
 private:
     int m_healthPoints;
     int m_max;
 };
 
-enum class exceptions{InvalidArgument};
+class InvalidArgument{};
 
 
 #endif //EX3_HEALTHPOINTS_H

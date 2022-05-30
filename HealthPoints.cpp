@@ -8,12 +8,8 @@ HealthPoints::HealthPoints(const int max) {
     m_healthPoints= max;
     m_max= max;
     if (max <= 0){
-        throw (exceptions::InvalidArgument);
+        throw (InvalidArgument());
     }
-    try{
-        HealthPoints(max);
-    }
-    catch (...){};
 }
 
 HealthPoints& HealthPoints:: operator+(const int num){
