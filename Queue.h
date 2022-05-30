@@ -21,7 +21,7 @@ public:
     void popFront();
     int size();
 
-    //iterator
+    //iterators
     class Iterator;
     class ConstIterator;
     Iterator begin();
@@ -56,14 +56,18 @@ class Queue<T>::Iterator
     int m_index;
     Iterator(Queue* queue, int index);
     friend class Queue;
+
 public:
-    T& operator*() const;
-    Iterator & operator++();
-    Iterator operator++(T);
-    bool operator==(const Iterator& it);
-    bool operator!=(const Iterator& it);
     Iterator(const Iterator&) = default;
     Iterator& operator=(const Iterator&) = default;
+
+    T& operator*() const;
+    Iterator& operator++();
+    Iterator operator++(T);
+
+    bool operator==(const Iterator& it);
+    bool operator!=(const Iterator& it);
+
     //exceptions
     class InvalidOperation{};
 
@@ -76,18 +80,21 @@ class Queue<T>::ConstIterator
     int m_index;
     ConstIterator(const Queue* queue, int index);
     friend class Queue;
+
 public:
+    ConstIterator(const Iterator& i);
+    ConstIterator(const ConstIterator&) = default;
+    ConstIterator& operator=(const Iterator&);
+
     const T& operator*() const;
     ConstIterator & operator++();
     const ConstIterator operator++(T);
+
     bool operator==(const ConstIterator& it) const;
     bool operator!=(const ConstIterator& it) const;
-    ConstIterator(const ConstIterator&) = default;
-    ConstIterator& operator=(const Iterator&);
+
     //exceptions
     class InvalidOperation{};
-
-    ConstIterator(const Iterator& i);
 };
 
 //--------------Implementation-------------------
@@ -135,7 +142,7 @@ Queue<T> &Queue<T>::operator=(const Queue<T>& q) {
         m_size = q.m_size;
         m_tail = q.m_tail;
         for (int i = 0; i < m_size; ++i) {
-            m_data = q.m_data;
+            tempData[i] = q.m_data;
         }
     }
     catch (...)
@@ -150,8 +157,9 @@ Queue<T> &Queue<T>::operator=(const Queue<T>& q) {
 
 template<class T>
 void Queue<T>::reSize(int size,int newSize) {
-    T* temp = new T[newSize];
+    T* temp;
     try {
+        temp = new T[newSize];
         for (int i = 0; i < size; ++i) {
             temp[i] = m_data[i];
         }
@@ -347,8 +355,15 @@ template<class S, class H>
 Queue<S> filter(Queue<S> q, H filterFunction) {
     Queue<S> tempQueue;
     for (auto iterator = q.begin(); iterator != q.end(); ++iterator) {
-        if(filterFunction(*iterator))
-            tempQueue.pushBack(*iterator);
+        if(filterFunction(*iterator)) {
+            try {
+                tempQueue.pushBack(*iterator);
+            }
+            catch (...)
+            {
+                throw;
+            }
+        }
     }
     return tempQueue;
 }

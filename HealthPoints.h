@@ -25,6 +25,7 @@ public:
 
     friend bool operator== (const HealthPoints&, const HealthPoints&);
     friend bool operator< (const HealthPoints&, const HealthPoints&);
+
     friend ostream& operator<<(ostream& os, const HealthPoints& health);
 
     //Exceptions
