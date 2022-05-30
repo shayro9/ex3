@@ -21,12 +21,14 @@ public:
     bool operator> (const HealthPoints& other);
     bool operator<= (const HealthPoints& other);
     bool operator< (const HealthPoints& other);
-    void operator<< ();
+    //void operator<< ();
 
 private:
     int m_healthPoints;
     int m_max;
 };
+
+enum class exceptions{InvalidArgument};
 
 
 #endif //EX3_HEALTHPOINTS_H

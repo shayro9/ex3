@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2022.1.1\bin\cmake\win\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\shayr\Documents\GitHub\ex3
+CMAKE_SOURCE_DIR = C:\Users\michalmaya\Documents\GitHub\ex3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ex3.dir/depend.make
@@ -72,31 +72,31 @@ CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj: CMakeFiles/ex3.dir/includes_CXX.rsp
 CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj: ../QueueExampleTests.cpp
 CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj: CMakeFiles/ex3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj -MF CMakeFiles\ex3.dir\QueueExampleTests.cpp.obj.d -o CMakeFiles\ex3.dir\QueueExampleTests.cpp.obj -c C:\Users\shayr\Documents\GitHub\ex3\QueueExampleTests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex3.dir/QueueExampleTests.cpp.obj -MF CMakeFiles\ex3.dir\QueueExampleTests.cpp.obj.d -o CMakeFiles\ex3.dir\QueueExampleTests.cpp.obj -c C:\Users\michalmaya\Documents\GitHub\ex3\QueueExampleTests.cpp
 
 CMakeFiles/ex3.dir/QueueExampleTests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/QueueExampleTests.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex3\QueueExampleTests.cpp > CMakeFiles\ex3.dir\QueueExampleTests.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\michalmaya\Documents\GitHub\ex3\QueueExampleTests.cpp > CMakeFiles\ex3.dir\QueueExampleTests.cpp.i
 
 CMakeFiles/ex3.dir/QueueExampleTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/QueueExampleTests.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\shayr\Documents\GitHub\ex3\QueueExampleTests.cpp -o CMakeFiles\ex3.dir\QueueExampleTests.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\michalmaya\Documents\GitHub\ex3\QueueExampleTests.cpp -o CMakeFiles\ex3.dir\QueueExampleTests.cpp.s
 
 CMakeFiles/ex3.dir/TestMain.cpp.obj: CMakeFiles/ex3.dir/flags.make
 CMakeFiles/ex3.dir/TestMain.cpp.obj: CMakeFiles/ex3.dir/includes_CXX.rsp
 CMakeFiles/ex3.dir/TestMain.cpp.obj: ../TestMain.cpp
 CMakeFiles/ex3.dir/TestMain.cpp.obj: CMakeFiles/ex3.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex3.dir/TestMain.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex3.dir/TestMain.cpp.obj -MF CMakeFiles\ex3.dir\TestMain.cpp.obj.d -o CMakeFiles\ex3.dir\TestMain.cpp.obj -c C:\Users\shayr\Documents\GitHub\ex3\TestMain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ex3.dir/TestMain.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ex3.dir/TestMain.cpp.obj -MF CMakeFiles\ex3.dir\TestMain.cpp.obj.d -o CMakeFiles\ex3.dir\TestMain.cpp.obj -c C:\Users\michalmaya\Documents\GitHub\ex3\TestMain.cpp
 
 CMakeFiles/ex3.dir/TestMain.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ex3.dir/TestMain.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\shayr\Documents\GitHub\ex3\TestMain.cpp > CMakeFiles\ex3.dir\TestMain.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\michalmaya\Documents\GitHub\ex3\TestMain.cpp > CMakeFiles\ex3.dir\TestMain.cpp.i
 
 CMakeFiles/ex3.dir/TestMain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ex3.dir/TestMain.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\shayr\Documents\GitHub\ex3\TestMain.cpp -o CMakeFiles\ex3.dir\TestMain.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\michalmaya\Documents\GitHub\ex3\TestMain.cpp -o CMakeFiles\ex3.dir\TestMain.cpp.s
 
 # Object files for target ex3
 ex3_OBJECTS = \
@@ -112,7 +112,7 @@ ex3.exe: CMakeFiles/ex3.dir/build.make
 ex3.exe: CMakeFiles/ex3.dir/linklibs.rsp
 ex3.exe: CMakeFiles/ex3.dir/objects1.rsp
 ex3.exe: CMakeFiles/ex3.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex3.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ex3.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ex3.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -124,6 +124,6 @@ CMakeFiles/ex3.dir/clean:
 .PHONY : CMakeFiles/ex3.dir/clean
 
 CMakeFiles/ex3.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\shayr\Documents\GitHub\ex3 C:\Users\shayr\Documents\GitHub\ex3 C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug C:\Users\shayr\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles\ex3.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\michalmaya\Documents\GitHub\ex3 C:\Users\michalmaya\Documents\GitHub\ex3 C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug C:\Users\michalmaya\Documents\GitHub\ex3\cmake-build-debug\CMakeFiles\ex3.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ex3.dir/depend
 
