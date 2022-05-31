@@ -4,6 +4,10 @@
 
 //default c'tor initial size and resizing addition;
 #define SIZE 10
+#include "new"
+
+using namespace std;
+using std::bad_alloc;
 
 //----------Interface---------------
 
@@ -29,25 +33,25 @@ public:
     Iterator end();
     ConstIterator end() const;
 
-    //external functions
-    template<class S, class H>
-    friend Queue<S> filter(Queue<S> q, H filterFunction);
-    template<class S, class H>
-    friend void transform(Queue<S> &q, H transformFunction);
-
     //exceptions
-    class EmptyQueue{};
-    class OutOfMemory{};
-
-    //my functions
-    void reSize(int size, int newSize);
+    class EmptyQueue : exception{};
+    class OutOfMemory : exception{};
 
 private:
     T* m_data;
     int m_tail;
     int m_size;
     int m_maxSize;
+
+    //my functions
+    void reSize(int size, int newSize);
 };
+
+//external functions
+template<class S, class H>
+Queue<S> filter(Queue<S> q, H filterFunction);
+template<class S, class H>
+void transform(Queue<S> &q, H transformFunction);
 
 template <class T>
 class Queue<T>::Iterator
@@ -69,7 +73,7 @@ public:
     bool operator!=(const Iterator& it);
 
     //exceptions
-    class InvalidOperation{};
+    class InvalidOperation : exception{};
 
 };
 
@@ -94,7 +98,7 @@ public:
     bool operator!=(const ConstIterator& it) const;
 
     //exceptions
-    class InvalidOperation{};
+    class InvalidOperation : exception{};
 };
 
 //--------------Implementation-------------------
